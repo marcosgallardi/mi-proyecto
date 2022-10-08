@@ -1,6 +1,16 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .bg-image{
-    background-image: url(../../public/Assets/img/bg-5.jpg);
+    background-image: url(../../public/Assets/img/bg-home.jpg);
+    background-position: center;
+    background-size: cover;
     
 };
+
+
+
+//style
+
+.mn-5{
+    margin: -400px;
+}
