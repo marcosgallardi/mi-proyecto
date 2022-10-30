@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { getClotes, getFilterClotes } from '../data/data';
+import { getFilterClotes, getTypeFilter } from '../services/firebase';
+import { getClotes } from '../services/firebase';
+import { Contacto } from './Contacto';
+import { Footer } from './Footer';
 
 import { ItemList } from './ItemList';
+import { Nosotros } from './Nosotros';
 
 export const ItemListContainer = (props) => {
+
+
 
     const inicialState = [];
 
@@ -12,7 +18,7 @@ export const ItemListContainer = (props) => {
 
 
     const { categoryId } = useParams()
-
+    const { tipoId } = useParams()
 
 
     useEffect(() => {
@@ -28,7 +34,17 @@ export const ItemListContainer = (props) => {
     }, [categoryId]
     );
 
-
+    useEffect(() => {
+        if (tipoId === undefined) {
+            getClotes().then((data) => {
+                setCard(data);
+            });
+        } else {
+            getTypeFilter(tipoId).then((data) => {
+                setCard(data)
+            })
+        }
+    }, [tipoId])
 
 
     return (
@@ -39,16 +55,19 @@ export const ItemListContainer = (props) => {
                     <ItemList card={card} />
 
                 </div>
-
-
             </div>
 
 
-
+            <Nosotros />
+            <Contacto />
+            <Footer/>
 
         </>
     )
 };
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDetailClotes } from '../data/data';
+import { getDetailClotes } from '../services/firebase';
 import { ItemDetail } from './ItemDetail';
 
 

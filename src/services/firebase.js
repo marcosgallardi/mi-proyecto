@@ -1,4 +1,73 @@
-export const data = [
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc  } from "firebase/firestore";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBQnBIuWHgPZ938rc3RPQrO_UaGdfkRv_g",
+  authDomain: "miproyectoreact-7cce6.firebaseapp.com",
+  projectId: "miproyectoreact-7cce6",
+  storageBucket: "miproyectoreact-7cce6.appspot.com",
+  messagingSenderId: "734017833478",
+  appId: "1:734017833478:web:c94bb3903b23b4c7221187"
+};
+
+// Initialize Firebase
+const FirebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(FirebaseApp);
+
+
+
+ export const getClotes = async () => {
+  const collectionRef = collection(db,"camisetas")
+  let resultados = await getDocs(collectionRef)
+  let dataRopa = resultados.docs.map(doc => {
+  return{id: doc.id, ...doc.data()};
+  })
+  return dataRopa
+};
+
+export const getDetailClotes = async (Itemid) => {
+ const item = doc(db,"camisetas",Itemid)
+ let resultadoUno = await getDoc(item);
+ return {id: resultadoUno.id , ...resultadoUno.data()}
+};
+
+export const getFilterClotes = async (categoryId) => {
+  const categoriasRef = collection(db,"camisetas")
+
+  const busqueda = query(categoriasRef, where ("conferencia", "==",categoryId))
+  let resultadoDos = await getDocs(busqueda);
+
+   let dataBusqueda = resultadoDos.docs.map((doc) => {
+  return{id: doc.id, ...doc.data(),};
+  })
+
+  return dataBusqueda;
+};
+
+export const getTypeFilter = async (tipoId) => {
+   const categorias = collection(db,"camisetas")
+
+  const filtroConferencia = query(categorias, where ("type", "==",tipoId))
+  let resultadoTres = await getDocs(filtroConferencia);
+   let dataBusquedaDos = resultadoTres.docs.map((doc) => {
+  return{id: doc.id, ...doc.data(),};
+  })
+  return dataBusquedaDos;
+};
+
+export const CreateOrder = async (datosTotales) => {
+  const collectionRef = collection(db,"ordenesDeCompra")
+  let  respuesta = await addDoc(collectionRef,datosTotales)
+  return respuesta.id;
+};
+
+const cargaMasiva = async () => {
+  const data = [
     {
         id:"1",
         title:"Brooklyn Nets Icon Edition 2022/23",
@@ -489,10 +558,10 @@ export const data = [
         type:"pantalones"
     },
 ];
-   
-    
-
-
-
-
-  
+  let itemCharger = collection(db,"camisetas")
+      for (const item of data) {
+        delete(item.id)
+        let newCharger = await addDoc(itemCharger,item)
+        
+   }
+};

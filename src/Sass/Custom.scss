@@ -1,16 +1,26 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .bg-image{
-    background-image: url(../../public/Assets/img/bg-home.jpg);
+    background-image: url(../../public/Assets/img/bg-13.jpg);
     background-position: center;
     background-size: cover;
     
 };
 
+.bg-nosotros{
+    background-image: url(../../public/Assets/img/bg-8.jpg);
+    background-position: end;
+    background-size: cover;
+    
+};
 
 
 //style
 
 .mn-5{
-    margin: -400px;
+    margin-top: -400px;
+};
+
+.tamaño{
+  width: 18rem;
 }

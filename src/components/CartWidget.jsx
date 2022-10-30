@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { cartContext } from '../context/cartContext';
 
 export const CartWidget = (props) => {
+
+    const { getTotalItemCount} = useContext(cartContext);
+
     return (
         <>
-            <a href="#" className=' pe-3'>
+            <Link to="/cart" className=' pe-3'>
                 {props.icon}
-            </a>
+            <span> {getTotalItemCount()} </span>
+            </Link>
         </>
     )
 }

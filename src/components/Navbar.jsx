@@ -19,8 +19,8 @@ export const Navbar = () => {
           <div className="dropdown">
             <li className="fs-5 link-light text-decoration-none pe-4 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</li>
             <ul className="dropdown-menu dropdown-menu-dark">
-              <li><NavLink to={`/`} className="dropdown-item link-light text-center">Camisetas</NavLink></li>
-              <li><NavLink to={`/`} className="dropdown-item link-light text-center">Pantalones</NavLink></li>
+              <li><NavLink to={`/productos/remeras`} className="dropdown-item link-light text-center">Camisetas</NavLink></li>
+              <li><NavLink to={`/productos/pantalones`} className="dropdown-item link-light text-center">Pantalones</NavLink></li>
             </ul>
           </div>
 
