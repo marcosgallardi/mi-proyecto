@@ -9,18 +9,41 @@ export const CartContextProvider = (props) => {
 
     const addToCart = (item, count) => {
 
-        let newCart = [...cart];
-        let newItem = { ...item, count }
-        newCart.push(newItem)
-        setCart(newCart)
-    }
+        const newItem = { ...item, count }
 
 
+        if (isInCart(newItem.id)) {
 
 
+            const newCart = cart.map(producto => {
+
+                if (producto.id === newItem.id) {
+                    producto.count += newItem.count
+                }
+                console.log(producto.id)
+                return (producto)
+            })
 
 
+            setCart(newCart)
 
+        }
+
+        else {
+            setCart([...cart, newItem])
+
+        }
+
+
+    };
+    const removeItem = (idRemove) => {
+        const newRemove = cart.filter(itemInCart => (itemInCart.id !== idRemove))
+        setCart([...newRemove]);
+    };
+
+    const isInCart = (id) => {
+        return cart.some(producto => (producto.id === id))
+    };
 
     const getTotalItemCount = () => {
         let total = 0;
@@ -35,26 +58,28 @@ export const CartContextProvider = (props) => {
         cart.forEach(itemInCart => {
             total = total + (itemInCart.count * itemInCart.price)
         });
+
         return total;
     };
 
-    const removeItem = (idRemove) => {
-        let newRemove = cart.filter(itemInCart => (itemInCart.id !== idRemove))
-        setCart(newRemove);
-    };
+
 
     const removeTotal = () => {
-        setCart(cart = []);
+        setCart([]);
     };
 
 
 
     return (
 
-        <cartContext.Provider value={{ cart, addToCart, getTotalItemCount, removeItem, getTotalPrice, removeTotal }}>
+        <cartContext.Provider value={{ cart, addToCart, getTotalItemCount, removeItem, getTotalPrice, removeTotal, isInCart }}>
             {props.children}
         </cartContext.Provider>
 
 
     )
 };
+
+
+
+

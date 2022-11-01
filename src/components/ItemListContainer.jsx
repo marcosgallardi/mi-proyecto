@@ -4,9 +4,9 @@ import { getFilterClotes, getTypeFilter } from '../services/firebase';
 import { getClotes } from '../services/firebase';
 import { Contacto } from './Contacto';
 import { Footer } from './Footer';
-
 import { ItemList } from './ItemList';
 import { Nosotros } from './Nosotros';
+
 
 export const ItemListContainer = (props) => {
 
@@ -50,7 +50,7 @@ export const ItemListContainer = (props) => {
     return (
         <>
 
-            <div className="container-fluid">
+            <div className="container-fluid bg-dark pb-5">
                 <div className="container">
                     <ItemList card={card} />
 

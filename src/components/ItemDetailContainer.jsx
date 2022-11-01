@@ -23,6 +23,7 @@ export const ItemDetailContainer = (props) => {
                 <div className="container">
 
                     <ItemDetail
+                        id={product.id}
                         title={product.title}
                         description={product.description}
                         img={product.img}

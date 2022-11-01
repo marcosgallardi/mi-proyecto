@@ -6,7 +6,7 @@ export const Nosotros = () => {
     return (
         <>
 
-            <div className="container-fluid bg-nosotros vh-100">
+            <div className="container-fluid bg-nosotros vh-100" id="nosotros">
                 <div className="ps-4">
                     <h2 className="display-5 text-light text-start fw-bold pt-5">Somos Durham</h2>
                     <h3 className="text-white text-start fw-bold pt-5 fs-3">Entusiastas de la NBA por sobre todas las cosas.</h3>

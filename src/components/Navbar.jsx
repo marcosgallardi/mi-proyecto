@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { CartWidget } from './CartWidget';
-import { ItemListContainer } from './ItemListContainer';
+
 
 export const Navbar = () => {
   return (
@@ -34,8 +34,8 @@ export const Navbar = () => {
 
 
 
-          <li><NavLink to={"/"} className="fs-5 link-light text-decoration-none pe-4">Nosotros</NavLink> </li>
-          <li><NavLink to={"/"} className="fs-5 link-light text-decoration-none pe-4">Contancto</NavLink> </li>
+          <li><a href="#nosotros"  className="fs-5 link-light text-decoration-none pe-4">Nosotros</a> </li>
+          <li><a href="#contacto"  className="fs-5 link-light text-decoration-none pe-4">Contancto</a> </li>
         </nav>
 
         <div className="d-flex align-items-center">

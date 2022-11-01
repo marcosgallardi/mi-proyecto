@@ -12518,4 +12518,143 @@ fieldset:disabled .btn {
 .tamaño {
   width: 18rem;
 }
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+  background: #ccc;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(#dedede), to(#ccc));
+  background: linear-gradient(90deg, #ccc, #dedede, #ccc);
+  -webkit-animation: progress 1s ease-in-out infinite;
+          animation: progress 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes progress {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+.skeleton1 {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  height: 40px;
+  background: #ccc;
+}
+
+.skeleton1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(#dedede), to(#ccc));
+  background: linear-gradient(90deg, #ccc, #dedede, #ccc);
+  -webkit-animation: progress 1s ease-in-out infinite;
+          animation: progress 1s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+.skeleton2 {
+  position: relative;
+  overflow: hidden;
+  width: 20%;
+  height: 40px;
+  background: #ccc;
+}
+
+.skeleton2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(#dedede), to(#ccc));
+  background: linear-gradient(90deg, #ccc, #dedede, #ccc);
+  -webkit-animation: progress 1s ease-in-out infinite;
+          animation: progress 1s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
+
+.skeleton3 {
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+  height: 30px;
+  background: #ccc;
+}
+
+.skeleton3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(#dedede), to(#ccc));
+  background: linear-gradient(90deg, #ccc, #dedede, #ccc);
+  -webkit-animation: progress 1s ease-in-out infinite;
+          animation: progress 1s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+}
 /*# sourceMappingURL=Custom.css.map */
